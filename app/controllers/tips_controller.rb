@@ -4,6 +4,7 @@ class TipsController < ApplicationController
   # GET /tips or /tips.json
   def index
     @tips = Tip.all
+    @tips_value = Tip.values_sum
   end
 
   # GET /tips/1 or /tips/1.json
