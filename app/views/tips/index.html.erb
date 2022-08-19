@@ -1,12 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Tips</h1>
+<h1>Tips total value: <%= @tips_value %></h1>
 
 <div id="tips">
   <% @tips.each do |tip| %>
     <%= render tip %>
+    <%=  tip.brt_time_zone %>
     <p>
-      <%= link_to "Show this tip", tip %>
+        <%= link_to "Edit this tip", edit_tip_path(tip) %> |
+        <%= link_to "Back to tips", tips_path %>
+        <%= button_to "Destroy this tip", @tip, method: :delete %>
     </p>
   <% end %>
 </div>
