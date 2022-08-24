@@ -23,15 +23,11 @@ class TipsController < ApplicationController
   # POST /tips or /tips.json
   def create
     @tip = Tip.new(tip_params)
-
-    respond_to do |format|
-      if @tip.save
-        format.html { redirect_to tip_url(@tip), notice: "Tip was successfully created." }
-        format.json { render :show, status: :created, location: @tip }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @tip.errors, status: :unprocessable_entity }
-      end
+    if @tip.save
+      redirect_to action: 'index'
+    else
+      format.html { render :new, status: :unprocessable_entity }
+      format.json { render json: @tip.errors, status: :unprocessable_entity }
     end
   end
 
