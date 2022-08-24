@@ -1,27 +1,30 @@
-<%= form_with(model: tip) do |form| %>
-  <% if tip.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(tip.errors.count, "error") %> prohibited this tip from being saved:</h2>
-
-      <ul>
-        <% tip.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :value, style: "display: block" %>
-    <%= form.number_field :value, step: 0.01 %>
+<article class="panel is-link">
+  <div class="panel-block">
+    <%= form_with(model: tip) do |form| %>
+      <div>
+        <div class="field">
+          <%= form.label :value, style: "display: block", class: 'label' %>
+          <div class="control">
+            <%= form.number_field :value, step: 0.01, class: 'input', type: 'text' %>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="field">
+          <%= form.label :description, style: "display: block", class: 'label' %>
+          <div class="control">
+            <%= form.text_field :description, class: 'input', type: 'text' %>
+          </div>
+        </div>
+      </div>
+      <div class="panel-block columns ">
+        <div class="column">
+          <%= form.submit 'Save', class: "button is-primary" %>
+        </div>
+        <div class="column">
+          <%= link_to "Back to tips", tips_path, class: "button is-info" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</article>

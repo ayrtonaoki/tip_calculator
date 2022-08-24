@@ -1,9 +1,18 @@
-<h1>New tip</h1>
-
-<%= render "form", tip: @tip %>
-
-<br>
-
-<div>
-  <%= link_to "Back to tips", tips_path %>
+<div class="columns is-centered">
+  <div class="column is-half">
+    <div class="card column is-10">
+      <div class="card-content">
+        <p style="color: green"><%= notice %></p>
+        <h1 class="title">Tips Calculator</h1>
+        <article class="panel is-link">
+          <p class="panel-heading">
+            New Tip
+          </p>
+          <div class="panel-block">
+            <%= render "form", tip: @tip %>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
 </div>
