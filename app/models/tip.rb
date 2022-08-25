@@ -1,4 +1,6 @@
 class Tip < ApplicationRecord
+    validates :value, numericality: true
+
     def self.values_sum
         Tip.all.pluck(:value).sum
     end
