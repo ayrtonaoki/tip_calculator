@@ -24,10 +24,11 @@ class TipsController < ApplicationController
   def create
     @tip = Tip.new(tip_params)
     if @tip.save
+      flash[:notice] = "Tip created with success!"
       redirect_to action: 'index'
     else
-      format.html { render :new, status: :unprocessable_entity }
-      format.json { render json: @tip.errors, status: :unprocessable_entity }
+      flash.now[:alert] = @tip.errors.objects.first.full_message
+      render action: 'new', status: 422
     end
   end
 
