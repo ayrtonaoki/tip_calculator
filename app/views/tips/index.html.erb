@@ -24,8 +24,8 @@
                   <td><%= tip.description %></td>
                   <td><%= tip.value %></td>
                   <td><%= tip.brt_time_zone %></td>
-                  <td><%=  link_to "Edit", edit_tip_path(tip), class: "button is-info"%></td>
-                  <td><%=  button_to "Delete", @tip, method: :delete, class: "button is-danger"%></td>
+                  <td><%= link_to "Edit", edit_tip_path(tip), class: "button is-info" %></td>
+                  <td><%= button_to "Delete", @tip, method: :delete, class: "button is-danger" %></td>
                 </tr>
               <% end %>
             </table>
