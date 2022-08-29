@@ -12,8 +12,8 @@
             <table class="table">
               <tr>
                 <th>Tip</th>
-                <th>Description</th>
                 <th>Value</th>
+                <th>Description</th>
                 <th>Date</th>
                 <th>Edit</th>
                 <th>Delete</th>
@@ -21,11 +21,11 @@
               <% @tips.each do |tip| %>
                 <tr>
                   <td><%= tip.id %></td>
-                  <td><%= tip.description %></td>
                   <td><%= tip.value %></td>
+                  <td><%= tip.description %></td>
                   <td><%= tip.brt_time_zone %></td>
                   <td><%= link_to "Edit", edit_tip_path(tip), class: "button is-info" %></td>
-                  <td><%= button_to "Delete", @tip, method: :delete, class: "button is-danger" %></td>
+                  <td><%= button_to "Delete", tip_path(tip), method: :delete, class: "button is-danger" %></td>
                 </tr>
               <% end %>
             </table>
