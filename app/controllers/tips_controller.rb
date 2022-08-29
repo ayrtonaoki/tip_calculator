@@ -49,10 +49,7 @@ class TipsController < ApplicationController
   def destroy
     @tip.destroy
 
-    respond_to do |format|
-      format.html { redirect_to tips_url, notice: "Tip was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to action: 'index'
   end
 
   private
