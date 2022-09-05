@@ -34,14 +34,12 @@ class TipsController < ApplicationController
 
   # PATCH/PUT /tips/1 or /tips/1.json
   def update
-    respond_to do |format|
-      if @tip.update(tip_params)
-        format.html { redirect_to tip_url(@tip), notice: "Tip was successfully updated." }
-        format.json { render :show, status: :ok, location: @tip }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @tip.errors, status: :unprocessable_entity }
-      end
+    if @tip.update(tip_params)
+      flash[:notice] = "Tip updated with success!"
+      redirect_to action: 'index'
+    else
+      flash.now[:alert] = @tip.errors.objects.first.full_message
+      render action: 'new', status: 422
     end
   end
 
