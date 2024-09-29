@@ -1,4 +1,4 @@
-# Sobre / About
+## Sobre / About
 **(PT-BR)**
 Este projeto é basicamente um gerenciador de gorjetas, onde o usuário consegue adicionar, editar e excluir gorjetas, informando o valor e uma descrição para identificar a gorjeta.
 
@@ -7,10 +7,10 @@ This project is essentially a tip manager, where the user can add, edit, and del
 
 ![image](https://github.com/user-attachments/assets/cee244ea-a728-44d3-928c-3bf68bb7760f)
 
-# Requisitos / Requirements
+## Requisitos / Requirements
 - Ruby 3.1.2
 
-# Primeiros Passos / Getting Started
+## Primeiros Passos / Getting Started
 **(PT-BR)**
 - Clone o repositório: `git clone git@github.com:ayrtonaoki/tip_calculator.git`
 - Entre na pasta do projeto: `cd tip_calculator`
